@@ -1,9 +1,9 @@
-﻿CUST_KEY,Customer_name,DOB,Address ,email_id,Mobile_no.,Cust_rating,Gender,S_n_P_rating
-INAB18310470,Bhuvana D. kumar,03-05-1987,"442Nguyen The Minh Khai, District 3, HCMC,Bangalore,560001",bhuvana719@gmail.com,9750181184,A+,M,CCC
-INAC27340307,RUDRA D. PNDA,03-04-1995,"170Hai Ba Trung, Da Kao ward, District 1, HCMC,Mysore, 460010",rudrad812@gmail.com,9763731912,A++,M,A
-INAD86857343,Abhijat.S,06-11-1988,"15Mukta residency near dnyshwar nagar jule solapur ,mysore, 460011",abhijat815@gmail.com,9331350771,B++,F,B
-INAE11217962,Jayant V. Sharma,03-03-1987,"3-333/2ramireddy peta, narasarao peta, Delhi, 360027",jayant 974@gmail.com,8390458432,C+,M,BB
-INAB57992136,Ankur S. pandey,05-11-1998,"105Floors 1st & 5th , Corner Stone Building, 16 Phan Chu Trinh, Hoan Kiem, Hanoi, Delhi, 360001",ankurp395@gmail.com,8251562132,A+,F,AAA
+﻿CUST_KEY,Customer_name,DOB,Address ,email_id,Mobile_no.,Cust_rating,Gender,S_n_P rating
+INAB18310470,Bhuvana kumar,03-05-1987,"Nguyen The Minh Khai, District 3, HCMC",bhuvana719@gmail.com,7042177739,A+,M,CCC
+INAC27340307,RUDRA DEV PANDA,03-04-1995,"Hai Ba Trung, Da Kao ward, District 1, HCMC",rudra d812@gmail.com,7042192624,A++,M,A
+INAD86857343,Abhijat,06-11-1988,Mukta residency near dnyshwar nagar jule solapur,abhijat815@gmail.com,7042241680,B++,F,B
+INAE11217962,Jayant Sharma,03-03-1987,"ramireddy peta, narasarao peta",jayant 974@gmail.com,7042288401,C+,M,BB
+INAB57992136,Ankur pandey,05-11-1998,"Floors 1st & 5th , Corner Stone Building, 16 Phan Chu Trinh, Hoan Kiem, Hanoi",ankur p395@gmail.com,7042373732,A+,F,AAA
 INAD49612099,NOOPUR A. CHHAPARIYA,24-10-1982,"205Pahanmala Shirur Tal-Shirur Dist-Pune Delhi, 360010",noopur665@gmail.com,8803422903,B++,M,AAA
 INAE30147533,Pramod K. Gond,28-10-1988,"456Sharma boys hostel ,Navi Peth ,Sadashiv peth ,Pune  Hyderabad, 160002",pramod176@gmail.com,9260019536,C+,F,BB
 INAJ86124293,Pooja P. Tewari,21-10-1983,"112-114-116-118Hai Ba Trung Street, Da Kao ward, District 1, HCMC, Ghaziabad, 260011",poojat866@gmail.com,9687454903,B++,M,CCC
