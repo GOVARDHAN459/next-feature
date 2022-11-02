@@ -9,6 +9,8 @@ import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
+import org.springframework.batch.core.job.builder.FlowBuilder;
+import org.springframework.batch.core.job.flow.Flow;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.item.database.JpaItemWriter;
 import org.springframework.batch.item.file.FlatFileItemReader;
@@ -25,8 +27,11 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.PathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+
 
 import com.example.demo.pjo.CrediData;
 import com.example.demo.pjo.SavingData;
@@ -149,12 +154,36 @@ public class Batchconfig
 	
 	@Bean
 	public Job job() {
+		
+		Flow secondflow=new FlowBuilder<Flow>("secondflow")
+				.start(step2())
+				.build();
+		
+		Flow parrelleflow=new FlowBuilder<Flow>("parallelflow")
+				.start(step1())
+				.split(TaskExecutor())
+				.add(secondflow)
+				
+				.build();
+				
+				
+		
+		
+		
 		return this.jobBuilderFactory.get("data")
 				.incrementer(new RunIdIncrementer())
-				.flow(step1())
-				.next(step2())
+				.start(parrelleflow)
 				.end()
 				.build();
+	}
+	
+	@Bean
+	public TaskExecutor TaskExecutor() {
+		 ThreadPoolTaskExecutor executor=new ThreadPoolTaskExecutor();
+		 executor.setCorePoolSize(4);
+		 executor.setMaxPoolSize(4);
+		 executor.afterPropertiesSet();
+		return executor;
 	}
 
 	@Bean
@@ -175,7 +204,10 @@ public class Batchconfig
 				.reader(fileItemReader())
 				.processor(creditDataprocess())
 				.writer(writer())
+				
 				.build();
 		
 	}
+	
+	
 }
